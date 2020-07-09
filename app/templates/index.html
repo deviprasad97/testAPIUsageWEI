@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Hi, {{ session['user'].name }}!</h1>
+    {% if current_user.usertype==1 %}
+    <h2>As a system administrator, you can register a new user for the internal system, and view all customers in the external system now.</h2>
+    {% else %}
+    <h2>As a Sales representative, you can search a user in the system.</h2>
+    {%endif%}
+{% endblock %}

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+  <title>My Account</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  * {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: Blue;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  
+  
+}
+
+.col-25 {
+  float: left;
+  width: 24%;
+  margin-top: 6px;
+  margin-left:10px
+}
+
+.col-75 {
+  float: left;
+  width: 74%;
+  margin-top: 6px;
+  margin-left:10px
+}
+.pic{
+    float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style> 
+<style type="text/css">
+      .chart {
+        list-style: none;
+        
+        font-size: 14px;
+        border: 1px solid #ccc;
+        margin: 0;
+        padding: 5px;
+        background:#F2F1D7;
+        float:left;
+      }
+      .chart li {
+        width:70px;
+        height:140px;
+        float:left;
+        background:#DDF3FF url(http://images.cnblogs.com/cnblogs_com/rubylouvre/202680/o_pillar.gif) center center repeat-y;
+      }
+      .chart li em,  .chart li span,.chart li strong {
+        display:block;
+        height:20px;
+        text-align:center;
+      }
+      .chart li em,  .chart li strong{
+        background: #DDF3FF;
+      }
+      .chart li span {
+        height:100px;
+        background:transparent url(http://images.cnblogs.com/cnblogs_com/rubylouvre/202680/o_mask.jpg)  no-repeat;
+      }
+    </style>
+  
+
+</head>
+<body>
+
+                                      
+
+<div class="container">
+  <div class ="row">
+    
+  <img src="redlogo.png" alt="" width="160" height="100">
+  
+  
+  <ul class="list-inline">
+    <li><a href="#">INSURANCE</a></li>
+    <li><a href="#">GET A QUOTE</a></li>
+    <li><a href="#">PAY A BILL</a></li>
+    <li><a href="#">CLAIMS</a></li>
+    
+    
+  </ul>
+  
+  </div>
+    
+</div>
+
+<div class="container" style="height:800px">
+  <div class="w3-sidebar w3-bar-block w3-light-grey w3-card" style="width:200px">
+  <h5 class="w3-bar-item">My Health Center</h5>
+  <button class="w3-bar-item w3-button tablink" onclick="openCity(event, 'London')">Workouts</button>
+  <button class="w3-bar-item w3-button tablink" onclick="openCity(event, 'Paris')">Heart Rate</button>
+  <button class="w3-bar-item w3-button tablink" onclick="openCity(event, 'Tokyo')">Sleep Analysis</button>
+</div>
+
+<div style="margin-left:200px" >
+  <div class="w3-padding">Health Socre </div>
+    <ul class="chart" style="margin-left:100px">
+      <li><em>Jan</em><span style="background-position: center -90px"></span><strong>90%</strong></li>
+      <li><em>Feb</em><span style="background-position: center -88px"></span><strong>88%</strong></li>
+      <li><em>Mar</em><span style="background-position: center -85px"></span><strong>85%</strong></li>
+      <li><em>Apr</em><span style="background-position: center -73px"></span><strong>73%</strong></li>
+      <li><em>May</em><span style="background-position: center -70px"></span><strong>70%</strong></li>
+    </ul>
+  <div id="London" class="w3-container city" style="display:none">
+    <h2>Your workouts</h2>
+    <p>Your workouts data should be show here</p>
+    
+  </div>
+
+  <div id="Paris" class="w3-container city" style="display:none">
+    <h2>Heart Rate</h2>
+    <p>Your heart rate data should be show here</p> 
+    
+  </div>
+
+  <div id="Tokyo" class="w3-container city" style="display:none">
+    <h2>Sleep Analysis</h2>
+    <p>Sleep data should be show here.</p>
+    
+  </div>
+
+</div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-red", ""); 
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " w3-red";
+}
+</script>
+</div>
+</body>
+</html>
