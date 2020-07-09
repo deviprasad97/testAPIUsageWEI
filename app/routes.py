@@ -73,9 +73,9 @@ def logout():
 #     return render_template('register.html', title='Register', form=form)
 
 
-# @app.route('/view')
-# @login_required
-# def view():
-#     customers = Customer.query.all()
-#     return 'render_template('
+@app.route('/view')
+@login_required
+def view():
+    customers = Customer.query.all()
+    return 'render_template('
     
